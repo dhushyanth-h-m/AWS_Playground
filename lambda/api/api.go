@@ -76,7 +76,7 @@ func (api ApiHandler) RegisterUserHandler(request events.APIGatewayProxyRequest)
 		return events.APIGatewayProxyResponse{
 			Body:       "Error inserting user",
 			StatusCode: http.StatusInternalServerError,
-		}, fmt.Errorf("error inserting user: %v", err)
+		}, fmt.Errorf("error inserting user: %w", err)
 	}
 
 	return events.APIGatewayProxyResponse{

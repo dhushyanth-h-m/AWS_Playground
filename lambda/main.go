@@ -21,7 +21,7 @@ func HandleRequest(event MyEvent) (string, error) {
 		return "", fmt.Errorf("username is empty")
 	}
 
-	return fmt.Sprintf("Successfully called by - %s\n", event.Username), nil
+	return fmt.Sprintf("Successfully called by - %s", event.Username), nil
 }
 func main() {
 	myApp := app.NewApp()
