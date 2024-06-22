@@ -62,6 +62,10 @@ func NewAwsBasicsStack(scope constructs.Construct, id string, props *AwsBasicsSt
 	loginResource := api.Root().AddResource(jsii.String("login"), nil)
 	loginResource.AddMethod(jsii.Sprintf("POST"), integration, nil)
 
+	//Define the login routes
+	protectedResource := api.Root().AddResource(jsii.String("protected"), nil)
+	protectedResource.AddMethod(jsii.Sprintf("GET"), integration, nil)
+
 	// example resource
 	// queue := awssqs.NewQueue(stack, jsii.String("AwsBasicsQueue"), &awssqs.QueueProps{
 	// 	VisibilityTimeout: awscdk.Duration_Seconds(jsii.Number(300)),
